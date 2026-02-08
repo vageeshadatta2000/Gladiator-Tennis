@@ -2,10 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { Header } from '@/components/Header';
-import { MatchForm } from '@/components/match-form';
-import { MatchFormProvider } from '@/context/MatchFormContext';
+import { MatchHistory } from '@/components/MatchHistory';
 
-export default function Home() {
+export default function HistoryPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -20,23 +19,15 @@ export default function Home() {
             className="text-center mb-8"
           >
             <h1 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-              Log a Match Result
+              Match History
             </h1>
             <p className="text-slate-400 text-sm sm:text-base">
-              Record your recent match and invite your opponent to Gladiator Tennis
+              Your recorded matches and results
             </p>
           </motion.div>
 
-          {/* Match Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <MatchFormProvider>
-              <MatchForm />
-            </MatchFormProvider>
-          </motion.div>
+          {/* Match History */}
+          <MatchHistory />
         </div>
       </main>
     </div>
