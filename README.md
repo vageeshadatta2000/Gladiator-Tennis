@@ -362,7 +362,3 @@ This project was built with AI assistance. See [PROMPTS.md](../PROMPTS.md) for t
 Given more time, I would add a real backend with database persistence instead of localStorage, and implement actual email delivery for opponent invites. I would also add user authentication, the ability to edit or delete matches, and end-to-end tests with Playwright. Finally, I would improve the mobile experience with better touch interactions and add doubles match support.
 
 ---
-
-## License
-
-This project was created as a take-home assignment for Gladiator Tennis.
