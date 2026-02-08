@@ -137,6 +137,44 @@ What's missing or could be improved?
 
 ---
 
+## Iteration Prompt 5: Test Suite
+
+```
+I need to add a comprehensive test suite for this project. Can you set up Jest with
+React Testing Library and write tests that cover:
+
+1. Tennis Score Validation Logic
+   - Valid set scores (6-0, 6-4, 7-5, 7-6)
+   - Invalid set scores (6-5, 8-6 without tiebreak, etc.)
+   - Tiebreak validation (must have winner with 2+ point lead and 7+ points)
+   - Match result calculation (best of 3 sets)
+   - Edge cases like 3-0 sweeps being invalid
+
+2. Mock Data Helpers
+   - Player search functionality (case insensitive, partial matches)
+   - API simulation functions (delays, error handling)
+   - ID generation (uniqueness, format)
+   - localStorage helpers
+
+3. Form Context
+   - State initialization
+   - Step navigation (next, previous, go to specific step)
+   - Form data updates for each step
+   - Form reset functionality
+
+4. Component Tests
+   - OpponentStep: input rendering, validation errors, form submission
+   - MatchHistory: loading states, empty states, match display, error handling
+
+Make sure to mock framer-motion and next/link properly since they cause issues in tests.
+Also mock localStorage in the test setup file.
+
+I want good coverage but focus on the critical business logic, especially the tennis
+scoring rules since those are complex.
+```
+
+---
+
 ## Notes on Prompt Strategy
 
 **What worked well:**
@@ -144,11 +182,14 @@ What's missing or could be improved?
 - Breaking down the work into logical chunks (form structure → validation → styling)
 - Referencing actual UI screenshots for design direction
 - Asking for specific edge cases to be handled
+- Specifying exactly what to test and what mocks were needed upfront
 
 **Where I refined AI output:**
 - Tennis scoring validation needed several iterations to get the rules right
 - Had to clarify the opponent invite flow based on recruiter feedback
 - Adjusted animations to be more subtle (AI initially made them too flashy)
+- Fixed framer-motion mocks to properly filter out motion-specific props
+- Updated test expectations for edge cases like 3-0 sweeps
 
 **Key decisions I made (not AI):**
 - Chose multi-step form over single long form for better UX
